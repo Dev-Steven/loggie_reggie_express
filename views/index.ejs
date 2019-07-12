@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loggie Reggie</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <form class="reg" action="/register" method="post">
+        <h1>Registration</h1>
+        <div class="errors">
+            <% if(messages.registration) { %>
+                <% for (var x of messages.registration) { %>
+                 <h5><%= x %></h5>
+                <% } %>
+            <% } %>
+        </div>
+        <h4>First Name:</h4>
+        <input type="text" name="first_name">
+
+        <h4>Last Name:</h4>
+        <input type="text" name="last_name">
+
+        <h4>Email:</h4>
+        <input type="email" name="email">
+
+        <h4>Birthday:</h4>
+        <input type="date" name="birthday">
+
+        <h4>Password:</h4>
+        <input type="password" name="password">
+        <br>
+        <h4>Confirm Password:</h4>
+        <input type="password" name="confirm_pw">
+        <br>
+        <input class="btn btn-success" type="submit" value="Register!">
+
+    </form>
+    <form class="log" action="/login" method="post">
+        <h1>Login</h1>
+        <div class="errors">
+            <% if(messages.login) { %>
+                <% for (var x of messages.login) { %>
+                    <h5><%= x %></h5>
+                <% } %>
+            <% } %>
+        </div>
+        <h4>Email:</h4>
+        <input type="email" name="email">
+
+        <h4>Password:</h4>
+        <input type="password" name="password">
+        <br>
+        <input class="btn btn-success" type="submit" value="Login!">
+    </form>
+</body>
+</html>
